@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                tools:ignore="RtlHardcoded">
+
+    <ImageView
+        android:id="@+id/hero_image"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/ic_menu_gallery"/>
+
+    <Button
+        android:id="@+id/btn_yes"
+        android:layout_width="96dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/hero_image"
+        android:gravity="center"
+        android:text="@string/yes"/>
+
+    <Button
+        android:id="@+id/btn_no"
+        android:layout_width="96dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/hero_image"
+        android:gravity="center"
+
+        android:text="@string/no"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/hero_image"
+        android:layout_toLeftOf="@id/btn_no"
+        android:layout_toRightOf="@id/btn_yes"
+        android:gravity="center_vertical"
+        android:text="Title?"/>
+
+</RelativeLayout>
