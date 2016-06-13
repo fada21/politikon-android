@@ -14,7 +14,7 @@
 
     <Button
         android:id="@+id/btn_yes"
-        android:layout_width="96dp"
+        android:layout_width="@dimen/bet_btn_width"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/hero_image"
@@ -23,21 +23,21 @@
 
     <Button
         android:id="@+id/btn_no"
-        android:layout_width="96dp"
+        android:layout_width="@dimen/bet_btn_width"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/hero_image"
         android:gravity="center"
-
         android:text="@string/no"/>
 
     <TextView
+        android:id="@+id/bet_item_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/hero_image"
         android:layout_toLeftOf="@id/btn_no"
         android:layout_toRightOf="@id/btn_yes"
-        android:gravity="center_vertical"
+        android:gravity="center"
         android:text="Title?"/>
 
 </RelativeLayout>
