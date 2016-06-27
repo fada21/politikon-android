@@ -16,7 +16,8 @@
             android:id="@+id/hero_image"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:src="@drawable/ic_menu_gallery"/>
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_bitcoin"/>
 
         <Button
             android:id="@+id/btn_yes"
@@ -24,6 +25,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_below="@+id/hero_image"
+            android:background="@color/politikon_yes_green"
             android:gravity="center"
             android:text="@string/yes"/>
 
@@ -33,6 +35,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_below="@+id/hero_image"
+            android:background="@color/politikon_no_red"
             android:gravity="center"
             android:text="@string/no"/>
 

@@ -3,4 +3,9 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="politikon_yes_green_cost">#a0b918</color>
+    <color name="politikon_yes_green">#d1e567</color>
+    <color name="politikon_no_red">#ffb8a5</color>
+    <color name="politikon_no_red_cost">#d13a12</color>
 </resources>
