@@ -1,0 +1,35 @@
+{
+  "data": {
+    "event": {
+      "id": 2,
+      "title": "Parlament Brytyjski głosuje przeciwko wyjściu Zjednoczonego Królestwa z Unii Europejskiej",
+      "content": "Parlament Brytyjski głosuje przeciwko wyjściu Zjednoczonego Królestwa z Unii Europejskiej.",
+      "image": "file://android_asset/parlamentbrytyjski.jpg",
+      "dates": {
+        "publish_date": "2016-04-30T23:59:59.999+01:00",
+        "modify_date": "2016-04-30T23:59:59.999+01:00",
+        "resolution_date": "2016-11-30T23:59:59.999+01:00"
+      },
+      "tags": [
+        "brexit"
+      ],
+      "yes_price": 5,
+      "no_price": 95
+    }
+  },
+  "participants": {
+    "yes_ids": [
+      1
+    ],
+    "no_ids": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ]
+  }
+}
