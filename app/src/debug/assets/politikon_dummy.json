@@ -1,141 +1,140 @@
 {
-  "data":{
-    "events":[
+  "data": {
+    "events": [
       {
-        "id":1,
-        "title":"Tom Hiddleston wciela się w rolę Jamesa Bonda",
-        "content":"Do końca lipca 2016 r. przedstawiciel wytwórni EON Productions potwierdza udział aktora Toma Hiddlestona jako tytułowego bohatera nowego filmu o Jamesie Bondzie.",
-        "image":"file:///android_asset/bond.jpg",
-        "dates":{
-          "publish_date":"2016-01-31T23:59:59.999+01:00",
-          "modify_date":"2016-01-31T23:59:59.999+01:00",
-          "resolution_date":"2016-07-31T23:59:59.999+01:00"
+        "id": 3,
+        "title": "Cena Bitcoina powyżej 1000 dolarów",
+        "content": "Maksymalna cena kryptowaluty Bitcoin w okresie 17 czerwca - 17 lipca 2016 (włącznie) wg wyceny www.CoinMarketCap.com przekracza $1000.",
+        "image": "file:///android_asset/bitcoin.jpg",
+        "dates": {
+          "publish_date": "2016-01-31T23:59:59.999+01:00",
+          "modify_date": "2016-01-31T23:59:59.999+01:00",
+          "resolution_date": "2016-07-31T23:59:59.999+01:00"
         },
-        "tags":[
-          "newjamesbond"
-        ],
-        "yes_price":14,
-        "no_price":86
-      },
-      {
-        "id":3,
-        "title":"Cena Bitcoina powyżej 1000 dolarów",
-        "content":"Maksymalna cena kryptowaluty Bitcoin w okresie 17 czerwca - 17 lipca 2016 (włącznie) wg wyceny www.CoinMarketCap.com przekracza $1000.",
-        "image":"file:///android_asset/bitcoin.jpg",
-        "dates":{
-          "publish_date":"2016-02-28T23:59:59.999+01:00",
-          "modify_date":"2016-02-28T23:59:59.999+01:00",
-          "resolution_date":"2016-07-17T23:59:59.999+01:00"
-        },
-        "tags":[
+        "tags": [
           "btcprice"
         ],
-        "yes_price":1,
-        "no_price":99
+        "yes_price": 1,
+        "no_price": 99
       },
       {
-        "id":6,
-        "title":"Mosul zostaje odbity z rąk ISIS",
-        "content":"Do końca września 2016 r. Mosul zostaje odbity z rąk tzw. Państwa Islamskiego.",
-        "image":"file:///android_asset/mosul.jpg",
-        "dates":{
-          "publish_date":"2016-03-15T23:59:59.999+01:00",
-          "modify_date":"2016-03-15T23:59:59.999+01:00",
-          "resolution_date":"2016-08-12T23:59:59.999+01:00"
+        "id": 1,
+        "title": "Tom Hiddleston wciela się w rolę Jamesa Bonda",
+        "content": "Do końca lipca 2016 r. przedstawiciel wytwórni EON Productions potwierdza udział aktora Toma Hiddlestona jako tytułowego bohatera nowego filmu o Jamesie Bondzie.",
+        "image": "file:///android_asset/bond.jpg",
+        "dates": {
+          "publish_date": "2016-02-28T23:59:59.999+01:00",
+          "modify_date": "2016-02-28T23:59:59.999+01:00",
+          "resolution_date": "2016-07-17T23:59:59.999+01:00"
         },
-        "tags":[
+        "tags": [
+          "newjamesbond"
+        ],
+        "yes_price": 14,
+        "no_price": 86
+      },
+      {
+        "id": 6,
+        "title": "Mosul zostaje odbity z rąk ISIS",
+        "content": "Do końca września 2016 r. Mosul zostaje odbity z rąk tzw. Państwa Islamskiego.",
+        "image": "file:///android_asset/mosul.jpg",
+        "dates": {
+          "publish_date": "2016-03-15T23:59:59.999+01:00",
+          "modify_date": "2016-03-15T23:59:59.999+01:00",
+          "resolution_date": "2016-08-12T23:59:59.999+01:00"
+        },
+        "tags": [
           "mosul"
         ],
-        "yes_price":20,
-        "no_price":80
+        "yes_price": 20,
+        "no_price": 80
       },
       {
-        "id":8,
-        "title":"Wotum nieufności dla Rady Ministrów",
-        "content":"Do 7 września 2016 r. w Sejmie odbywa się nad głosowanie nad wotum nieufności dla Rady Ministrów.",
-        "image":"file:///android_asset/sejm.jpg",
-        "dates":{
-          "publish_date":"2016-03-20T23:59:59.999+01:00",
-          "modify_date":"2016-03-20T23:59:59.999+01:00",
-          "resolution_date":"2016-09-07T23:59:59.999+01:00"
+        "id": 8,
+        "title": "Wotum nieufności dla Rady Ministrów",
+        "content": "Do 7 września 2016 r. w Sejmie odbywa się nad głosowanie nad wotum nieufności dla Rady Ministrów.",
+        "image": "file:///android_asset/sejm.jpg",
+        "dates": {
+          "publish_date": "2016-03-20T23:59:59.999+01:00",
+          "modify_date": "2016-03-20T23:59:59.999+01:00",
+          "resolution_date": "2016-09-07T23:59:59.999+01:00"
         },
-        "tags":[
+        "tags": [
           "rzad2016"
         ],
-        "yes_price":3,
-        "no_price":97
+        "yes_price": 3,
+        "no_price": 97
       },
       {
-        "id":4,
-        "title":"Najbliższe wybory prezydenckie w USA zwycięża Donald Trump",
-        "content":"Najbliższe wybory prezydenckie w USA zwycięża Donald Trump.",
-        "image":"file:///android_asset/trump.jpg",
-        "dates":{
-          "publish_date":"2016-03-31T23:59:59.999+01:00",
-          "modify_date":"2016-03-31T23:59:59.999+01:00",
-          "resolution_date":"2016-11-08T23:59:59.999+01:00"
+        "id": 4,
+        "title": "Najbliższe wybory prezydenckie w USA zwycięża Donald Trump",
+        "content": "Najbliższe wybory prezydenckie w USA zwycięża Donald Trump.",
+        "image": "file:///android_asset/trump.jpg",
+        "dates": {
+          "publish_date": "2016-03-31T23:59:59.999+01:00",
+          "modify_date": "2016-03-31T23:59:59.999+01:00",
+          "resolution_date": "2016-11-08T23:59:59.999+01:00"
         },
-        "tags":[
+        "tags": [
           "elections2016"
         ],
-        "yes_price":20,
-        "no_price":80
+        "yes_price": 20,
+        "no_price": 80
       },
       {
-        "id":7,
-        "title":"Referendum w sprawie \"wyjścia z UE\" w kolejnym państwie europejskim",
-        "content":"Do końca września 2016 r. w jednym z krajów członkowskich Unii Europejskiej zostaje ogłoszona data referendum w sprawie opuszczenia UE.",
-        "image":"file:///android_asset/europa.jpg",
-        "dates":{
-          "publish_date":"2016-04-15T23:59:59.999+01:00",
-          "modify_date":"2016-04-15T23:59:59.999+01:00",
-          "resolution_date":"2016-09-30T23:59:59.999+01:00"
+        "id": 7,
+        "title": "Referendum w sprawie \"wyjścia z UE\" w kolejnym państwie europejskim",
+        "content": "Do końca września 2016 r. w jednym z krajów członkowskich Unii Europejskiej zostaje ogłoszona data referendum w sprawie opuszczenia UE.",
+        "image": "file:///android_asset/europa.jpg",
+        "dates": {
+          "publish_date": "2016-04-15T23:59:59.999+01:00",
+          "modify_date": "2016-04-15T23:59:59.999+01:00",
+          "resolution_date": "2016-09-30T23:59:59.999+01:00"
         },
-        "tags":[
+        "tags": [
           "referendum"
         ],
-        "yes_price":14,
-        "no_price":86
+        "yes_price": 14,
+        "no_price": 86
       },
       {
-        "id":2,
-        "title":"Parlament Brytyjski głosuje przeciwko wyjściu Zjednoczonego Królestwa z Unii Europejskiej",
-        "content":"Parlament Brytyjski głosuje przeciwko wyjściu Zjednoczonego Królestwa z Unii Europejskiej.",
-        "image":"file:///android_asset/parlamentbrytyjski.jpg",
-        "dates":{
-          "publish_date":"2016-04-30T23:59:59.999+01:00",
-          "modify_date":"2016-04-30T23:59:59.999+01:00",
-          "resolution_date":"2016-11-30T23:59:59.999+01:00"
+        "id": 2,
+        "title": "Parlament Brytyjski głosuje przeciwko wyjściu Zjednoczonego Królestwa z Unii Europejskiej",
+        "content": "Parlament Brytyjski głosuje przeciwko wyjściu Zjednoczonego Królestwa z Unii Europejskiej.",
+        "image": "file:///android_asset/parlamentbrytyjski.jpg",
+        "dates": {
+          "publish_date": "2016-04-30T23:59:59.999+01:00",
+          "modify_date": "2016-04-30T23:59:59.999+01:00",
+          "resolution_date": "2016-11-30T23:59:59.999+01:00"
         },
-        "tags":[
+        "tags": [
           "brexit"
         ],
-        "yes_price":5,
-        "no_price":95
+        "yes_price": 5,
+        "no_price": 95
       },
       {
-        "id":5,
-        "title":"Szkoły gimnazjalne zostają zlikwidowane",
-        "content":"Nabór do pierwszych klas szkół gimnazjalnych zostaje zakończony przed początkiem roku szkolnego 2017/2018.",
-        "image":"file:///android_asset/gimnazja.jpg",
-        "dates":{
-          "publish_date":"2016-05-31T23:59:59.999+01:00",
-          "modify_date":"2016-05-31T23:59:59.999+01:00",
-          "resolution_date":"2016-09-15T23:59:59.999+01:00"
+        "id": 5,
+        "title": "Szkoły gimnazjalne zostają zlikwidowane",
+        "content": "Nabór do pierwszych klas szkół gimnazjalnych zostaje zakończony przed początkiem roku szkolnego 2017/2018.",
+        "image": "file:///android_asset/gimnazja.jpg",
+        "dates": {
+          "publish_date": "2016-05-31T23:59:59.999+01:00",
+          "modify_date": "2016-05-31T23:59:59.999+01:00",
+          "resolution_date": "2016-09-15T23:59:59.999+01:00"
         },
-        "tags":[
+        "tags": [
           "reformaedukacji"
         ],
-        "yes_price":80,
-        "no_price":20
+        "yes_price": 80,
+        "no_price": 20
       }
     ],
-    "pagination":{
-      "page":1,
-      "count":8,
-      "per_page":10,
-      "total_pages":1
+    "pagination": {
+      "page": 1,
+      "count": 8,
+      "per_page": 10,
+      "total_pages": 1
     }
   }
-
 }

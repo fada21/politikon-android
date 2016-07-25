@@ -5,15 +5,19 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class BetVH extends RecyclerView.ViewHolder {
 
-    public final ImageView betItemImage;
-    public TextView betItemTitleText;
+    @BindView(R.id.bet_item_title) TextView betItemTitleText;
+    @BindView(R.id.bet_hero_image) ImageView betItemImage;
+    @BindView(R.id.bet_yes_price_btn) TextView betYesPrice;
+    @BindView(R.id.bet_no_price_btn) TextView betNoPrice;
 
     public BetVH(View itemView) {
         super(itemView);
-        betItemTitleText = (TextView) itemView.findViewById(R.id.bet_item_title);
-        betItemImage = (ImageView) itemView.findViewById(R.id.hero_image);
+        ButterKnife.bind(this, itemView);
     }
 
 }
