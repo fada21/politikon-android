@@ -5,7 +5,7 @@
         "id":1,
         "title":"Tom Hiddleston wciela się w rolę Jamesa Bonda",
         "content":"Do końca lipca 2016 r. przedstawiciel wytwórni EON Productions potwierdza udział aktora Toma Hiddlestona jako tytułowego bohatera nowego filmu o Jamesie Bondzie.",
-        "image":"file://android_asset/bond.jpg",
+        "image":"file:///android_asset/bond.jpg",
         "dates":{
           "publish_date":"2016-01-31T23:59:59.999+01:00",
           "modify_date":"2016-01-31T23:59:59.999+01:00",
@@ -21,7 +21,7 @@
         "id":3,
         "title":"Cena Bitcoina powyżej 1000 dolarów",
         "content":"Maksymalna cena kryptowaluty Bitcoin w okresie 17 czerwca - 17 lipca 2016 (włącznie) wg wyceny www.CoinMarketCap.com przekracza $1000.",
-        "image":"file://android_asset/bitcoin.jpg",
+        "image":"file:///android_asset/bitcoin.jpg",
         "dates":{
           "publish_date":"2016-02-28T23:59:59.999+01:00",
           "modify_date":"2016-02-28T23:59:59.999+01:00",
@@ -37,7 +37,7 @@
         "id":6,
         "title":"Mosul zostaje odbity z rąk ISIS",
         "content":"Do końca września 2016 r. Mosul zostaje odbity z rąk tzw. Państwa Islamskiego.",
-        "image":"file://android_asset/mosul.jpg",
+        "image":"file:///android_asset/mosul.jpg",
         "dates":{
           "publish_date":"2016-03-15T23:59:59.999+01:00",
           "modify_date":"2016-03-15T23:59:59.999+01:00",
@@ -53,7 +53,7 @@
         "id":8,
         "title":"Wotum nieufności dla Rady Ministrów",
         "content":"Do 7 września 2016 r. w Sejmie odbywa się nad głosowanie nad wotum nieufności dla Rady Ministrów.",
-        "image":"file://android_asset/sejm.jpg",
+        "image":"file:///android_asset/sejm.jpg",
         "dates":{
           "publish_date":"2016-03-20T23:59:59.999+01:00",
           "modify_date":"2016-03-20T23:59:59.999+01:00",
@@ -69,7 +69,7 @@
         "id":4,
         "title":"Najbliższe wybory prezydenckie w USA zwycięża Donald Trump",
         "content":"Najbliższe wybory prezydenckie w USA zwycięża Donald Trump.",
-        "image":"file://android_asset/trump.jpg",
+        "image":"file:///android_asset/trump.jpg",
         "dates":{
           "publish_date":"2016-03-31T23:59:59.999+01:00",
           "modify_date":"2016-03-31T23:59:59.999+01:00",
@@ -85,7 +85,7 @@
         "id":7,
         "title":"Referendum w sprawie \"wyjścia z UE\" w kolejnym państwie europejskim",
         "content":"Do końca września 2016 r. w jednym z krajów członkowskich Unii Europejskiej zostaje ogłoszona data referendum w sprawie opuszczenia UE.",
-        "image":"file://android_asset/europa.jpg",
+        "image":"file:///android_asset/europa.jpg",
         "dates":{
           "publish_date":"2016-04-15T23:59:59.999+01:00",
           "modify_date":"2016-04-15T23:59:59.999+01:00",
@@ -101,7 +101,7 @@
         "id":2,
         "title":"Parlament Brytyjski głosuje przeciwko wyjściu Zjednoczonego Królestwa z Unii Europejskiej",
         "content":"Parlament Brytyjski głosuje przeciwko wyjściu Zjednoczonego Królestwa z Unii Europejskiej.",
-        "image":"file://android_asset/parlamentbrytyjski.jpg",
+        "image":"file:///android_asset/parlamentbrytyjski.jpg",
         "dates":{
           "publish_date":"2016-04-30T23:59:59.999+01:00",
           "modify_date":"2016-04-30T23:59:59.999+01:00",
@@ -117,7 +117,7 @@
         "id":5,
         "title":"Szkoły gimnazjalne zostają zlikwidowane",
         "content":"Nabór do pierwszych klas szkół gimnazjalnych zostaje zakończony przed początkiem roku szkolnego 2017/2018.",
-        "image":"file://android_asset/gimnazja.jpg",
+        "image":"file:///android_asset/gimnazja.jpg",
         "dates":{
           "publish_date":"2016-05-31T23:59:59.999+01:00",
           "modify_date":"2016-05-31T23:59:59.999+01:00",

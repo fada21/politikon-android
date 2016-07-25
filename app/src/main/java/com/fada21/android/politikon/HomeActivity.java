@@ -15,6 +15,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import java.util.List;
+
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -47,7 +49,8 @@ public class HomeActivity extends AppCompatActivity
         if (recyclerView != null) {
             recyclerView.setHasFixedSize(true);
             recyclerView.setLayoutManager(new LinearLayoutManager(this));
-            recyclerView.setAdapter(new BetAdapter(new String[]{"Title 1", "Title 2", "Title 3", "Title 4"}));
+            final List<Bet> bets = DummyBetsProvider.getBets(this);
+            recyclerView.setAdapter(new BetAdapter(bets));
         }
     }
 

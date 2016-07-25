@@ -2,16 +2,22 @@ package com.fada21.android.politikon;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.squareup.picasso.Callback;
+import com.squareup.picasso.Picasso;
+
+import java.util.List;
+
 public class BetAdapter extends RecyclerView.Adapter<BetVH> {
 
-    private final String[] data;
+    private final List<Bet> betList;
 
-    public BetAdapter(@NonNull String[] betTitles) {
-        data = betTitles;
+    public BetAdapter(@NonNull final List<Bet> bets) {
+        betList = bets;
     }
 
     @Override public BetVH onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -22,10 +28,20 @@ public class BetAdapter extends RecyclerView.Adapter<BetVH> {
     }
 
     @Override public void onBindViewHolder(BetVH holder, int position) {
-        holder.betItemTitleText.setText(data[position]);
+        final Bet bet = betList.get(position);
+        holder.betItemTitleText.setText(bet.title);
+        Picasso.with(holder.betItemImage.getContext()).load(bet.image).into(holder.betItemImage, new Callback() {
+            @Override public void onSuccess() {
+                Log.d("Picasso", "Success");
+            }
+
+            @Override public void onError() {
+                Log.d("Picasso", "Error");
+            }
+        });
     }
 
     @Override public int getItemCount() {
-        return data.length;
+        return betList.size();
     }
 }
