@@ -9,6 +9,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@android:color/white"
         android:orientation="vertical"
         tools:ignore="RtlHardcoded">
 
@@ -21,7 +22,7 @@
 
         <Space
             android:id="@+id/center_bottom"
-            android:layout_width="0dp"
+            android:layout_width="@dimen/xxl_space"
             android:layout_height="0dp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"/>
@@ -73,10 +74,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_above="@id/btn_yes"
-            android:layout_margin="@dimen/xs_space"
-            android:background="#bbffffff"
-            android:gravity="center"
             android:padding="@dimen/xs_space"
+            android:background="@android:color/white"
+            android:gravity="center"
             android:textSize="22sp"
             tools:text="Title?"/>
 
