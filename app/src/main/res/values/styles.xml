@@ -19,4 +19,18 @@
 
     <style name="ToolbarHeader" parent="TextAppearance.AppCompat.Headline"/>
 
+    <style name="BetButton" parent="Widget.AppCompat.Button.Borderless"/>
+
+    <style name="BetButton.Yes">
+        <item name="colorAccent">@color/politikon_yes_green</item>
+        <item name="android:textAppearance">@style/BetButtonText.YesButton</item>
+        <item name="android:gravity">left</item>
+    </style>
+
+    <style name="BetButton.No">
+        <item name="colorAccent">@color/politikon_no_red</item>
+        <item name="android:textAppearance">@style/BetButtonText.NoButton</item>
+        <item name="android:gravity">right</item>
+    </style>
+
 </resources>

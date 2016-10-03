@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="BetButtonText" parent="TextAppearance.AppCompat.Widget.Button">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="BetButtonText.YesButton">
+        <item name="android:textColor">@color/politikon_yes_green_cost</item>
+    </style>
+
+    <style name="BetButtonText.NoButton">
+        <item name="android:textColor">@color/politikon_no_red_cost</item>
+    </style>
+
+</resources>

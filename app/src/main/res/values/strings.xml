@@ -10,6 +10,6 @@
 
     <string name="hello_to_politikon">Hello to Politikon</string>
 
-    <string name="yes">Yes</string>
-    <string name="no">No</string>
+    <string name="yes_price">Yes %d</string>
+    <string name="no_price">%d No</string>
 </resources>
