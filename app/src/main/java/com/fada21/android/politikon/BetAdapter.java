@@ -1,5 +1,6 @@
 package com.fada21.android.politikon;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -27,10 +28,13 @@ public class BetAdapter extends RecyclerView.Adapter<BetVH> {
 
     @Override public void onBindViewHolder(BetVH holder, int position) {
         final Bet bet = betList.get(position);
+        final Context context = holder.itemView.getContext();
         holder.betItemTitleText.setText(bet.title);
         Picasso.with(holder.betItemImage.getContext()).load(bet.image).into(holder.betItemImage);
-        holder.betYesPrice.setText(String.valueOf(bet.yes_price));
-        holder.betNoPrice.setText(String.valueOf(bet.no_price));
+        final String yesPrice = context.getString(R.string.yes_price, bet.yes_price);
+        holder.betYesPrice.setText( String.valueOf(yesPrice));
+        final String noPrice = context.getString(R.string.no_price, bet.no_price);
+        holder.betNoPrice.setText(String.valueOf(noPrice));
     }
 
     @Override public int getItemCount() {

@@ -12,6 +12,7 @@
     <dimen name="l_space">24dp</dimen>
     <dimen name="xl_space">32dp</dimen>
     <dimen name="xxl_space">48dp</dimen>
+    <dimen name="xxxl_space">64dp</dimen>
 
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="bet_btn_width">96dp</dimen>
