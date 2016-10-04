@@ -10,7 +10,10 @@ android {
         targetSdkVersion 24
         versionCode 1
         versionName "1.0"
+
+        testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
     }
+
     buildTypes {
         debug {
             minifyEnabled false
@@ -24,13 +27,12 @@ android {
             testProguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguardTest-rules.pro'
         }
     }
+
     productFlavors {
         mock {
             applicationIdSuffix = ".mock"
         }
-        prod {
-
-        }
+        prod
     }
 
     // Remove mockRelease as it's not needed.
@@ -70,5 +72,4 @@ dependencies {
     annotationProcessor "com.jakewharton:butterknife-compiler:${butter_knife}"
 
     compile 'net.danlew:android.joda:2.9.4.1'
-
 }
