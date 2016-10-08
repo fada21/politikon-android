@@ -4,7 +4,7 @@ import android.app.Application;
 
 import net.danlew.android.joda.JodaTimeAndroid;
 
-public class Politikon extends Application {
+public class PolitikonApp extends Application {
 
     @Override public void onCreate() {
         super.onCreate();

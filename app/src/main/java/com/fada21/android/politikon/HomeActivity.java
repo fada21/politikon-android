@@ -15,6 +15,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.fada21.android.politikon.models.Bet;
+
 import java.util.List;
 
 public class HomeActivity extends AppCompatActivity

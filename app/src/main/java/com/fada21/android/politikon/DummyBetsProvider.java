@@ -2,6 +2,9 @@ package com.fada21.android.politikon;
 
 import android.content.Context;
 
+import com.fada21.android.politikon.models.Bet;
+import com.fada21.android.politikon.models.BetData;
+import com.fada21.android.politikon.models.Dates;
 import com.squareup.moshi.JsonAdapter;
 import com.squareup.moshi.Moshi;
 

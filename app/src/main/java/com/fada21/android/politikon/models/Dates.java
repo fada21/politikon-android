@@ -1,4 +1,4 @@
-package com.fada21.android.politikon;
+package com.fada21.android.politikon.models;
 
 import com.squareup.moshi.FromJson;
 import com.squareup.moshi.ToJson;
