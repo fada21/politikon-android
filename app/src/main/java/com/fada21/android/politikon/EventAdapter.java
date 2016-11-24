@@ -7,14 +7,15 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.fada21.android.politikon.models.Bet;
+import com.fada21.android.politikon.models.Event;
 
 import java.util.List;
 
-public class BetAdapter extends RecyclerView.Adapter<BetVH> {
+public class EventAdapter extends RecyclerView.Adapter<BetVH> {
 
-    private final List<Bet> betList;
+    private final List<Event> betList;
 
-    public BetAdapter(@NonNull final List<Bet> bets) {
+    public EventAdapter(@NonNull final List<Event> bets) {
         betList = bets;
     }
 

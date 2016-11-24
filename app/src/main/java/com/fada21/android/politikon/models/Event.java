@@ -1,6 +1,7 @@
 package com.fada21.android.politikon.models;
 
 public class Event {
+    int id;
     String title;
     String short_title;
     String twitter_tag;
@@ -12,7 +13,20 @@ public class Event {
     boolean is_feaured;
     int outcome;
     String outcome_reason;
-
+    String created_date;
+    int created_by;
+    String estimated_end_date;
+    String end_date;
+    int current_buy_for_price;
+    int current_buy_against_price;
+int current_sell_against_price;
+    String last_transaction_date;
+    int Q_for;
+    int Q_against;
+    int turnover;
+    int absolute_price_change;
+    int price_change;
+    float B;
 
 //    {
 //        "count": 360,

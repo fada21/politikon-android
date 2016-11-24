@@ -52,7 +52,7 @@ public class HomeActivity extends AppCompatActivity
             recyclerView.setHasFixedSize(true);
             recyclerView.setLayoutManager(new LinearLayoutManager(this));
             final List<Bet> bets = DummyBetsProvider.getBets(this);
-            recyclerView.setAdapter(new BetAdapter(bets));
+            recyclerView.setAdapter(new EventAdapter(bets));
         }
     }
 
