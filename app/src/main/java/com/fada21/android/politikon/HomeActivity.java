@@ -15,9 +15,20 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.fada21.android.politikon.events.EventAdapter;
+import com.fada21.android.politikon.events.EventViewModel;
+import com.fada21.android.politikon.events.EventViewModelConverter;
 import com.fada21.android.politikon.models.Bet;
+import com.fada21.android.politikon.repos.models.Event;
+import com.fada21.android.politikon.repos.remote.RemotePolitikonRepo;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import rx.Observable;
+import rx.functions.Action1;
+import rx.functions.Func0;
+import rx.functions.Func1;
 
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -47,12 +58,26 @@ public class HomeActivity extends AppCompatActivity
     }
 
     private void setupRecyclerView() {
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.bet_list);
+        final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.bet_list);
         if (recyclerView != null) {
             recyclerView.setHasFixedSize(true);
             recyclerView.setLayoutManager(new LinearLayoutManager(this));
-            final List<Bet> bets = DummyBetsProvider.getBets(this);
-            recyclerView.setAdapter(new EventAdapter(bets));
+            Observable<List<Event>> events = new RemotePolitikonRepo().getEventsService().getEvents();
+            final EventViewModelConverter converter = new EventViewModelConverter();
+            events.map(new Func1<List<Event>, List<EventViewModel>>() {
+                @Override public List<EventViewModel> call(List<Event> events) {
+                    ArrayList<EventViewModel> eventViewModels = new ArrayList<>(events.size());
+                    for (int i = 0, eventsSize = events.size(); i < eventsSize; i++) {
+                        Event event = events.get(i);
+                        eventViewModels.set(i, converter.convert(event));
+                    }
+                    return eventViewModels;
+                }
+            }).subscribe(new Action1<List<EventViewModel>>() {
+                @Override public void call(List<EventViewModel> eventViewModels) {
+                    recyclerView.setAdapter(new EventAdapter(eventViewModels));
+                }
+            });
         }
     }
 

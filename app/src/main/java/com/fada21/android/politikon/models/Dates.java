@@ -9,7 +9,7 @@ import org.joda.time.format.ISODateTimeFormat;
 
 public class Dates {
 
-    public static DateTimeFormatter ISO8601Formatter = ISODateTimeFormat.dateTime();
+    static DateTimeFormatter ISO8601Formatter = ISODateTimeFormat.dateTime();
 
     public DateTime publish_date;
     public DateTime modify_date;

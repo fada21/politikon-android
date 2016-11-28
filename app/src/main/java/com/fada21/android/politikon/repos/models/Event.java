@@ -1,38 +1,37 @@
-package com.fada21.android.politikon.models;
+package com.fada21.android.politikon.repos.models;
+
+import org.joda.time.DateTime;
 
 public class Event {
-    int id;
-    String title;
-    String short_title;
-    String twitter_tag;
-    String title_fb_yes;
-    String title_fb_no;
-    String description;
-    String small_image;
-    String big_image;
-    boolean is_feaured;
-    int outcome;
-    String outcome_reason;
-    String created_date;
-    int created_by;
-    String estimated_end_date;
-    String end_date;
-    int current_buy_for_price;
-    int current_buy_against_price;
-int current_sell_against_price;
-    String last_transaction_date;
-    int Q_for;
-    int Q_against;
-    int turnover;
-    int absolute_price_change;
-    int price_change;
-    float B;
+    public int id;
+    public String title;
+    public String short_title;
+    public String twitter_tag;
+    public String title_fb_yes;
+    public String title_fb_no;
+    public String description;
+    public String small_image;
+    public String big_image;
+    public boolean is_feaured;
+    public int outcome;
+    public String outcome_reason;
+    public DateTime created_date;
+    public int created_by;
+    public DateTime estimated_end_date;
+    public DateTime end_date;
+    public int current_buy_for_price;
+    public int current_buy_against_price;
+    public int current_sell_against_price;
+    public DateTime last_transaction_date;
+    public int Q_for;
+    public int Q_against;
+    public int turnover;
+    public int absolute_price_change;
+    public int price_change;
+    public float B;
 
-//    {
-//        "count": 360,
-//            "next": "https://www.politikon.org.pl/api/events/?page=2&page_size=5",
-//            "previous": null,
-//            "results": [
+}
+
 //        {
 //            "id": 236,
 //                "title": "Tylko polskie piosenki w TOP10 \"Trójki\"",
@@ -61,4 +60,3 @@ int current_sell_against_price;
 //                "price_change": -7,
 //                "B": 5.0
 //        },
-}
