@@ -14,10 +14,10 @@ import butterknife.ButterKnife;
 
 public class EventVH extends RecyclerView.ViewHolder {
 
-    @BindView(R.id.bet_item_title) private TextView itemTitle;
-    @BindView(R.id.bet_hero_image) private ImageView imageView;
-    @BindView(R.id.bet_yes_price_btn) private TextView yesPrice;
-    @BindView(R.id.bet_no_price_btn) private TextView noPrice;
+    @BindView(R.id.bet_item_title)  TextView itemTitle;
+    @BindView(R.id.bet_hero_image)  ImageView imageView;
+    @BindView(R.id.bet_yes_price_btn)  TextView yesPrice;
+    @BindView(R.id.bet_no_price_btn)  TextView noPrice;
 
     public EventVH(View itemView) {
         super(itemView);

@@ -13,7 +13,7 @@ public class RemotePolitikonRepo implements RemotePolitikonApi {
 
     public RemotePolitikonRepo() {
         retrofit = new Retrofit.Builder()
-                .baseUrl("https://politikon.org.pl/api")
+                .baseUrl("https://politikon.org.pl/api/")
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .addConverterFactory(MoshiConverterFactory.create(new Moshi.Builder().add(new DateUtils.DateAdapter()).build()))
                 .build();

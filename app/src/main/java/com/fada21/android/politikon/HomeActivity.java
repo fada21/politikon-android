@@ -26,9 +26,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import rx.Observable;
+import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
 import rx.functions.Func0;
 import rx.functions.Func1;
+import rx.schedulers.Schedulers;
 
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -64,20 +66,22 @@ public class HomeActivity extends AppCompatActivity
             recyclerView.setLayoutManager(new LinearLayoutManager(this));
             Observable<List<Event>> events = new RemotePolitikonRepo().getEventsService().getEvents();
             final EventViewModelConverter converter = new EventViewModelConverter();
-            events.map(new Func1<List<Event>, List<EventViewModel>>() {
-                @Override public List<EventViewModel> call(List<Event> events) {
-                    ArrayList<EventViewModel> eventViewModels = new ArrayList<>(events.size());
-                    for (int i = 0, eventsSize = events.size(); i < eventsSize; i++) {
-                        Event event = events.get(i);
-                        eventViewModels.set(i, converter.convert(event));
-                    }
-                    return eventViewModels;
+            events.concatMap(new Func1<List<Event>, Observable<Event>>() {
+                @Override public Observable<Event> call(List<Event> events) {
+                    return Observable.from(events);
                 }
-            }).subscribe(new Action1<List<EventViewModel>>() {
-                @Override public void call(List<EventViewModel> eventViewModels) {
-                    recyclerView.setAdapter(new EventAdapter(eventViewModels));
+            }).map(new Func1<Event, EventViewModel>() {
+                @Override public EventViewModel call(Event event) {
+                    return converter.convert(event);
                 }
-            });
+            }).toList()
+                    .subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe(new Action1<List<EventViewModel>>() {
+                        @Override public void call(List<EventViewModel> eventViewModels) {
+                            recyclerView.setAdapter(new EventAdapter(eventViewModels));
+                        }
+                    });
         }
     }
 

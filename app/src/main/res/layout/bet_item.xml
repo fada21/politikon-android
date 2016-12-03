@@ -17,8 +17,7 @@
             android:id="@+id/bet_hero_image"
             android:layout_width="match_parent"
             android:layout_height="@dimen/hero_image_height"
-            android:scaleType="centerCrop"
-            android:src="@drawable/img_bitcoin"/>
+            android:scaleType="centerCrop"/>
 
         <Space
             android:id="@+id/center_bottom"
