@@ -10,9 +10,9 @@ public class EventViewModelConverter {
         viewModel.imageUrl = event.small_image;
         viewModel.yesPrice = event.current_buy_for_price;
         viewModel.noPrice = event.current_buy_against_price;
-        viewModel.isResolved = event.end_date != null;
-        viewModel.estimatedEndDate = event.estimated_end_date;
-        viewModel.endDate = event.end_date;
+//        viewModel.isResolved = event.end_date != null;
+//        viewModel.estimatedEndDate = event.estimated_end_date;
+//        viewModel.endDate = event.end_date;
         return viewModel;
     }
 }

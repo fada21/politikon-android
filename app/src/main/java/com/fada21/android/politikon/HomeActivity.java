@@ -18,17 +18,15 @@ import android.view.View;
 import com.fada21.android.politikon.events.EventAdapter;
 import com.fada21.android.politikon.events.EventViewModel;
 import com.fada21.android.politikon.events.EventViewModelConverter;
-import com.fada21.android.politikon.models.Bet;
 import com.fada21.android.politikon.repos.models.Event;
+import com.fada21.android.politikon.repos.models.EventData;
 import com.fada21.android.politikon.repos.remote.RemotePolitikonRepo;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
-import rx.functions.Func0;
 import rx.functions.Func1;
 import rx.schedulers.Schedulers;
 
@@ -52,11 +50,8 @@ public class HomeActivity extends AppCompatActivity
                 }
             });
         }
-
         setupNavDrawer(toolbar);
-
         setupRecyclerView();
-
     }
 
     private void setupRecyclerView() {
@@ -64,11 +59,11 @@ public class HomeActivity extends AppCompatActivity
         if (recyclerView != null) {
             recyclerView.setHasFixedSize(true);
             recyclerView.setLayoutManager(new LinearLayoutManager(this));
-            Observable<List<Event>> events = new RemotePolitikonRepo().getEventsService().getEvents();
+            Observable<EventData> events = new RemotePolitikonRepo().getEventsService().getEvents(50);
             final EventViewModelConverter converter = new EventViewModelConverter();
-            events.concatMap(new Func1<List<Event>, Observable<Event>>() {
-                @Override public Observable<Event> call(List<Event> events) {
-                    return Observable.from(events);
+            events.concatMap(new Func1<EventData, Observable<Event>>() {
+                @Override public Observable<Event> call(EventData events) {
+                    return Observable.from(events.results);
                 }
             }).map(new Func1<Event, EventViewModel>() {
                 @Override public EventViewModel call(Event event) {

@@ -12,23 +12,23 @@ public class Event {
     public String description;
     public String small_image;
     public String big_image;
-    public boolean is_feaured;
+    public boolean is_featured;
     public int outcome;
     public String outcome_reason;
     public DateTime created_date;
-    public int created_by;
-    public DateTime estimated_end_date;
-    public DateTime end_date;
+//    public long created_by; // nullable
+//    public DateTime estimated_end_date;
+//    public DateTime end_date;
     public int current_buy_for_price;
     public int current_buy_against_price;
     public int current_sell_against_price;
-    public DateTime last_transaction_date;
-    public int Q_for;
-    public int Q_against;
-    public int turnover;
-    public int absolute_price_change;
-    public int price_change;
-    public float B;
+////    public DateTime last_transaction_date;
+//    public int Q_for;
+//    public int Q_against;
+//    public int turnover;
+//    public int absolute_price_change;
+//    public int price_change;
+//    public float B;
 
 }
 
