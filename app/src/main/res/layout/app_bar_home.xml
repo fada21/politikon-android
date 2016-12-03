@@ -62,6 +62,7 @@
         android:tint="@android:color/white"
         android:src="@drawable/ic_refresh_black_24dp"
         app:layout_anchor="@id/home_list"
+        app:layout_behavior="com.fada21.android.politikon.views.ScrollAwareFABBehavior"
         app:layout_anchorGravity="bottom|right|end"/>
 
 </android.support.design.widget.CoordinatorLayout>
