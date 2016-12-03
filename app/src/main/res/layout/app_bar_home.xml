@@ -22,11 +22,11 @@
             app:collapsedTitleTextAppearance="@style/ToolbarHeader"
             app:contentScrim="?attr/colorPrimary"
             app:expandedTitleGravity="center"
-            app:title="@string/home_title"
             app:expandedTitleMarginBottom="@dimen/l_space"
             app:expandedTitleMarginEnd="64dp"
             app:expandedTitleMarginStart="48dp"
-            app:layout_scrollFlags="scroll|snap|exitUntilCollapsed">
+            app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
+            app:title="@string/home_title">
 
             <ImageView
                 android:id="@+id/image"
@@ -59,8 +59,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
+        android:tint="@android:color/white"
+        android:src="@drawable/ic_refresh_black_24dp"
         app:layout_anchor="@id/home_list"
-        app:layout_anchorGravity="bottom|right|end"
-        android:src="@android:drawable/ic_dialog_email"/>
+        app:layout_anchorGravity="bottom|right|end"/>
 
 </android.support.design.widget.CoordinatorLayout>

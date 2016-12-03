@@ -33,6 +33,9 @@ import rx.schedulers.Schedulers;
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    private RecyclerView recyclerView;
+    private FloatingActionButton fab;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,44 +43,57 @@ public class HomeActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab = (FloatingActionButton) findViewById(R.id.fab);
         if (fab != null) {
             fab.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Snackbar.make(view, "Quick pick - not implemented yet", Snackbar.LENGTH_LONG)
-                            .setAction("Action", null).show();
+                    loadData();
                 }
             });
         }
         setupNavDrawer(toolbar);
         setupRecyclerView();
+        loadData();
     }
 
     private void setupRecyclerView() {
-        final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.bet_list);
+        recyclerView = (RecyclerView) findViewById(R.id.bet_list);
         if (recyclerView != null) {
             recyclerView.setHasFixedSize(true);
             recyclerView.setLayoutManager(new LinearLayoutManager(this));
-            Observable<EventData> events = new RemotePolitikonRepo().getEventsService().getEvents(50);
-            final EventViewModelConverter converter = new EventViewModelConverter();
-            events.concatMap(new Func1<EventData, Observable<Event>>() {
-                @Override public Observable<Event> call(EventData events) {
-                    return Observable.from(events.results);
-                }
-            }).map(new Func1<Event, EventViewModel>() {
-                @Override public EventViewModel call(Event event) {
-                    return converter.convert(event);
-                }
-            }).toList()
-                    .subscribeOn(Schedulers.io())
-                    .observeOn(AndroidSchedulers.mainThread())
-                    .subscribe(new Action1<List<EventViewModel>>() {
-                        @Override public void call(List<EventViewModel> eventViewModels) {
-                            recyclerView.setAdapter(new EventAdapter(eventViewModels));
-                        }
-                    });
         }
+    }
+
+    void loadData() {
+        Observable<EventData> events = new RemotePolitikonRepo().getEventsService().getEvents(50);
+        final EventViewModelConverter converter = new EventViewModelConverter();
+        events.concatMap(new Func1<EventData, Observable<Event>>() {
+            @Override public Observable<Event> call(EventData events) {
+                return Observable.from(events.results);
+            }
+        }).map(new Func1<Event, EventViewModel>() {
+            @Override public EventViewModel call(Event event) {
+                return converter.convert(event);
+            }
+        }).toList()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Action1<List<EventViewModel>>() {
+                               @Override public void call(List<EventViewModel> eventViewModels) {
+                                   recyclerView.setAdapter(new EventAdapter(eventViewModels));
+                               }
+                           },
+                        new Action1<Throwable>() {
+                            @Override public void call(Throwable throwable) {
+                                Snackbar.make(fab, "Internety nie działajo :(", Snackbar.LENGTH_LONG)
+                                        .setAction("Odświeżamy?", new View.OnClickListener() {
+                                            @Override public void onClick(View view) {
+                                                loadData();
+                                            }
+                                        }).show();
+                            }
+                        });
     }
 
     private void setupNavDrawer(Toolbar toolbar) {
