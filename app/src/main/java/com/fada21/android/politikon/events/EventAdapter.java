@@ -1,5 +1,6 @@
 package com.fada21.android.politikon.events;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -22,10 +23,35 @@ public class EventAdapter extends RecyclerView.Adapter<EventVH> {
     @Override public EventVH onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.bet_item, parent, false);
-        return new EventVH(v, position ->
-                Toast.makeText(parent.getContext(),
-                               String.format("%s position clicked", events.get(position).title),
-                               Toast.LENGTH_SHORT).show());
+        return new EventVH(v, getOnClicksListener(parent.getContext()));
+    }
+
+    OnClicksListener getOnClicksListener(Context context) {
+        return new OnClicksListener() {
+            @Override public void onItemClicked(EventViewModel eventVM) {
+                if (eventVM != null) {
+                    Toast.makeText(context,
+                                   String.format("%s position clicked", eventVM.title),
+                                   Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override public void onBuyForClicked(EventViewModel eventVM) {
+                if (eventVM != null) {
+                    Toast.makeText(context,
+                                   String.format("Bought for %d %s", eventVM.yesPrice, eventVM.title),
+                                   Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override public void onBuyAgainstClicked(EventViewModel eventVM) {
+                if (eventVM != null) {
+                    Toast.makeText(context,
+                                   String.format("Sold for %d %s", eventVM.noPrice, eventVM.title),
+                                   Toast.LENGTH_SHORT).show();
+                }
+            }
+        };
     }
 
     @Override public void onBindViewHolder(EventVH holder, int position) {
@@ -37,6 +63,10 @@ public class EventAdapter extends RecyclerView.Adapter<EventVH> {
     }
 
     public interface OnClicksListener {
-        void onItemClicked(int position);
+        void onItemClicked(EventViewModel eventViewModel);
+
+        void onBuyForClicked(EventViewModel eventViewModel);
+
+        void onBuyAgainstClicked(EventViewModel eventViewModel);
     }
 }

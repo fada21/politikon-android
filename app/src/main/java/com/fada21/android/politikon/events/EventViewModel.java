@@ -4,12 +4,12 @@ import org.joda.time.DateTime;
 
 public class EventViewModel {
 
-    String title;
-    String imageUrl;
-    int yesPrice;
-    int noPrice;
-    boolean isResolved;
-    DateTime estimatedEndDate;
-    DateTime endDate;
+    public String title;
+    public String imageUrl;
+    public int yesPrice;
+    public int noPrice;
+    public boolean isResolved;
+    public DateTime estimatedEndDate;
+    public DateTime endDate;
 
 }
