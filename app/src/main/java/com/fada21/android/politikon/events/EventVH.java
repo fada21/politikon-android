@@ -18,9 +18,12 @@ public class EventVH extends RecyclerView.ViewHolder {
     @BindView(R.id.bet_hero_image)  ImageView imageView;
     @BindView(R.id.bet_yes_price_btn)  TextView yesPrice;
     @BindView(R.id.bet_no_price_btn)  TextView noPrice;
+    private EventAdapter.OnClicksListener onClicksListener;
 
-    public EventVH(View itemView) {
+    public EventVH(View itemView, EventAdapter.OnClicksListener onClicksListener) {
         super(itemView);
+        this.onClicksListener = onClicksListener;
+        itemView.setOnClickListener(view -> onClicksListener.onItemClicked(this.getAdapterPosition()));
         ButterKnife.bind(this, itemView);
     }
 

@@ -1,6 +1,7 @@
 package com.fada21.android.politikon;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
@@ -13,21 +14,14 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
 import com.fada21.android.politikon.events.EventAdapter;
-import com.fada21.android.politikon.events.EventViewModel;
 import com.fada21.android.politikon.events.EventViewModelConverter;
-import com.fada21.android.politikon.repos.models.Event;
 import com.fada21.android.politikon.repos.models.EventData;
 import com.fada21.android.politikon.repos.remote.RemotePolitikonRepo;
 
-import java.util.List;
-
 import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
-import rx.functions.Action1;
-import rx.functions.Func1;
 import rx.schedulers.Schedulers;
 
 public class HomeActivity extends AppCompatActivity
@@ -45,12 +39,7 @@ public class HomeActivity extends AppCompatActivity
 
         fab = (FloatingActionButton) findViewById(R.id.fab);
         if (fab != null) {
-            fab.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    loadData();
-                }
-            });
+            fab.setOnClickListener(view -> loadData());
         }
         setupNavDrawer(toolbar);
         setupRecyclerView();
@@ -68,32 +57,21 @@ public class HomeActivity extends AppCompatActivity
     void loadData() {
         Observable<EventData> events = new RemotePolitikonRepo().getEventsService().getEvents(50);
         final EventViewModelConverter converter = new EventViewModelConverter();
-        events.concatMap(new Func1<EventData, Observable<Event>>() {
-            @Override public Observable<Event> call(EventData events) {
-                return Observable.from(events.results);
-            }
-        }).map(new Func1<Event, EventViewModel>() {
-            @Override public EventViewModel call(Event event) {
-                return converter.convert(event);
-            }
-        }).toList()
+        events
+                .concatMap(eventData -> Observable.from(eventData.results))
+                .map(converter::convert).toList()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Action1<List<EventViewModel>>() {
-                               @Override public void call(List<EventViewModel> eventViewModels) {
-                                   recyclerView.setAdapter(new EventAdapter(eventViewModels));
-                               }
-                           },
-                        new Action1<Throwable>() {
-                            @Override public void call(Throwable throwable) {
-                                Snackbar.make(fab, "Internety nie działajo :(", Snackbar.LENGTH_LONG)
-                                        .setAction("Odświeżamy?", new View.OnClickListener() {
-                                            @Override public void onClick(View view) {
-                                                loadData();
-                                            }
-                                        }).show();
-                            }
-                        });
+                .subscribe(
+                        eventViewModels -> recyclerView.setAdapter(new EventAdapter(eventViewModels)),
+                        throwable -> showRefreshSnackbar());
+    }
+
+    private void showRefreshSnackbar() {
+        Snackbar
+                .make(fab, "Internety nie działajo :(", Snackbar.LENGTH_LONG)
+                .setAction("Odświeżamy?", view -> loadData())
+                .show();
     }
 
     private void setupNavDrawer(Toolbar toolbar) {
@@ -141,7 +119,7 @@ public class HomeActivity extends AppCompatActivity
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
