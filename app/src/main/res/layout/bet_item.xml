@@ -1,59 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/xs_space">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:color/white"
-        android:orientation="vertical"
-        tools:ignore="RtlHardcoded">
+    <include layout="@layout/incl_bet_item"/>
 
-        <ImageView
-            android:id="@+id/bet_hero_image"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/hero_image_height"
-            android:scaleType="centerCrop"/>
-
-        <Space
-            android:id="@+id/center_bottom"
-            android:layout_width="@dimen/xxl_space"
-            android:layout_height="0dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"/>
-
-        <Button
-            android:id="@+id/bet_yes_price_btn"
-            style="@style/BetButton.Yes"
-            android:layout_width="@dimen/bet_btn_width"
-            android:layout_height="@dimen/buttons_height"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@+id/bet_hero_image"
-            tools:text="20"/>
-
-        <Button
-            android:id="@+id/bet_no_price_btn"
-            style="@style/BetButton.No"
-            android:layout_width="@dimen/bet_btn_width"
-            android:layout_height="@dimen/buttons_height"
-            android:layout_alignParentRight="true"
-            android:layout_below="@+id/bet_hero_image"
-            tools:text="80"/>
-
-        <TextView
-            android:id="@+id/bet_item_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_above="@id/bet_yes_price_btn"
-            android:background="@android:color/white"
-            android:gravity="center"
-            android:padding="@dimen/xs_space"
-            android:textSize="22sp"
-            tools:text="Title?"/>
-
-    </RelativeLayout>
 </android.support.v7.widget.CardView>

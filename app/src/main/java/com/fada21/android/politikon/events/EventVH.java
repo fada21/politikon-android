@@ -31,11 +31,11 @@ public class EventVH extends RecyclerView.ViewHolder {
     public void bind(EventViewModel event) {
         eventViewModel = event;
         final Context context = itemView.getContext();
-        itemTitle.setText(event.title);
-        Picasso.with(imageView.getContext()).load(event.imageUrl).into(imageView);
-        final String yesPrice = context.getString(R.string.yes_price, event.yesPrice);
+        itemTitle.setText(event.title());
+        Picasso.with(imageView.getContext()).load(event.imageUrl()).into(imageView);
+        final String yesPrice = context.getString(R.string.yes_price, event.yesPrice());
         this.yesPrice.setText(String.valueOf(yesPrice));
-        final String noPrice = context.getString(R.string.no_price, event.noPrice);
+        final String noPrice = context.getString(R.string.no_price, event.noPrice());
         this.noPrice.setText(String.valueOf(noPrice));
     }
 

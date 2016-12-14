@@ -1,5 +1,7 @@
 package com.fada21.android.politikon.repos.models;
 
+import android.support.annotation.Nullable;
+
 import org.joda.time.DateTime;
 
 public class Event {
@@ -15,10 +17,10 @@ public class Event {
     public boolean is_featured;
     public int outcome;
     public String outcome_reason;
-    public DateTime created_date;
-//    public long created_by; // nullable
-//    public DateTime estimated_end_date;
-//    public DateTime end_date;
+    @Nullable public DateTime created_date;
+    //    public long created_by; // nullable
+//    @Nullable public DateTime estimated_end_date; // 2016-08-26T18:40:57Z not ISO8601
+    @Nullable public DateTime end_date;
     public int current_buy_for_price;
     public int current_buy_against_price;
     public int current_sell_against_price;

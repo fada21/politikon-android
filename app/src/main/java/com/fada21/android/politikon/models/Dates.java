@@ -17,11 +17,11 @@ public class Dates {
 
     public static class DateAdapter {
         @ToJson String to(DateTime dateTime) {
-            return ISO8601Formatter.print(dateTime);
+            return dateTime != null ? ISO8601Formatter.print(dateTime) : null;
         }
 
         @FromJson DateTime from(String dateTimeString) {
-            return ISO8601Formatter.parseDateTime(dateTimeString);
+            return dateTimeString != null ? ISO8601Formatter.parseDateTime(dateTimeString) : null;
         }
     }
 }
