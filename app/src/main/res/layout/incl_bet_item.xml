@@ -18,7 +18,7 @@
         android:id="@+id/center_bottom"
         android:layout_width="@dimen/xxl_space"
         android:layout_height="0dp"
-        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"/>
 
     <Button

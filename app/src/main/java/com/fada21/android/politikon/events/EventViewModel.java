@@ -23,7 +23,7 @@ public abstract class EventViewModel implements Parcelable {
     }
 
     public abstract String title();
-    public abstract String descripton();
+    public abstract String description();
     public abstract String imageUrl();
     public abstract int yesPrice();
     public abstract int noPrice();

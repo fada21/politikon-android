@@ -34,6 +34,6 @@ public class EventActivity extends AppCompatActivity {
 
             }
         }).bind(eventVM);
-        ((TextView) view.findViewById(R.id.description)).setText(eventVM.descripton());
+        ((TextView) view.findViewById(R.id.description)).setText(eventVM.description());
     }
 }
